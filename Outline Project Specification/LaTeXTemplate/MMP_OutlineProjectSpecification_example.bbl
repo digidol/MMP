@@ -1,0 +1,56 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{HannahsPaper}
+H.~M. Dee and D.~C. Hogg, ``Navigational strategies in behaviour modelling,''
+  \emph{Artificial Intelligence}, vol. 173(2), pp. 329--342, 2009.
+ \begin{quotation}\noindent This is my annotation. I should add in a
+  description here. \end{quotation}
+
+\bibitem{kittenpic_ref}
+S.~Duckworth, ``{A picture of a kitten at Hellifield Peel},''
+  \url{http://www.geograph.org.uk/photo/640959}, 2007, copyright Sylvia
+  Duckworth and licensed for reuse under a Creative Commons Attribution-Share
+  Alike 2.0 Generic Licence. Accessed August 2011.
+ \begin{quotation}\noindent This is my annotation. I should add in a
+  description here. \end{quotation}
+
+\bibitem{MarksPaper}
+M.~Neal, J.~Feyereisl, R.~Rascun\`{a}, and X.~Wang, ``{Don't touch me, I'm
+  fine: Robot autonomy using an artificial innate immune system},'' in
+  \emph{Proceedings of the 5th International Conference on Artificial Immune
+  Systems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2006, pp.
+  349--361.
+ \begin{quotation}\noindent This paper... \end{quotation}
+
+\bibitem{NumericalRecipes}
+W.~Press \emph{et~al.}, \emph{{Numerical recipes in C}}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Cambridge University Press Cambridge, 1992, pp. 349--361,
+  0123456789.
+ \begin{quotation}\noindent This is my annotation. I can add in comments that
+  are in \textbf{bold} and \em{italics} and then other content. \end{quotation}
+
+\bibitem{FailBlog}
+Various, ``Fail blog,'' \url{http://www.failblog.org/}, Aug. 2011, accessed
+  August 2011.
+ \begin{quotation}\noindent This is my annotation. I should add in a
+  description here. \end{quotation}
+
+\end{thebibliography}
