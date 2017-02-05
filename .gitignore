@@ -1,0 +1,32 @@
+
+*.aux
+
+*.swp
+
+*.log
+
+*.lof
+
+*.lot
+
+Final Report/LaTeX Template/ResearchTemplate/dissertation.pdf
+
+*.gz
+
+Final Report/LaTeX Template/ResearchTemplate/dissertation.toc
+
+Final Report/LaTeX Template/SETemplate/dissertation.pdf
+
+*.toc
+
+Final Report/Word Templates/Older/MMP_Final_Report_Template_Research_Project_old1.dotx
+
+Final Report/LaTeX Template/ResearchTemplate/Images/aber-uni-logo.eps
+
+Final Report/LaTeX Template/ResearchTemplate/Images/aber-uni-logo.png
+
+Final Report/LaTeX Template/ResearchTemplate/Images/image.png
+
+Final Report/LaTeX Template/SETemplate/Images/aber-uni-logo.eps
+
+Final Report/LaTeX Template/SETemplate/Images/aber-uni-logo.png
