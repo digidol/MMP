@@ -3,7 +3,7 @@
 %% BibTeX Bibliography Style file
 %% Sorting version of IEEEtran.bst
 %% *** Not for use with work to be submitted to the IEEE ***
-%% Version 1.11 (2003/04/02)
+%% Version 1.2 (2017-02-05)
 %% 
 %% Copyright (c) 2003 Michael Shell
 %%
@@ -13,7 +13,11 @@
 %%
 %%		http://www.barik.net/sw/ieee/
 %%
-%% This version of IEEEannot is: 2004-15-02
+%% Modified by Neil Taylor (nst@aber.ac.uk) to remove the 
+%% sorting based on plain.bst. Renamed to IEEEannotU (unsorted)
+%% This modified version is available at https://github.com/digidol/MMP/
+%%
+%% This version of IEEEannot is: 2017-02-05
 %% 
 %% Original starting code base and algorithms obtained from the output of
 %% Patrick W. Daly's makebst package as well as from prior versions of
@@ -21,8 +25,6 @@
 %% 
 %% 1. Howard Trickey and Oren Patashnik's ieeetr.bst  (1985/1988)
 %% 2. Silvano Balemi and Richard H. Roy's IEEEbib.bst (1993)
-%% 
-%% Added sorting code is from plain.bst.
 %% 
 %% See:
 %% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
@@ -47,12 +49,12 @@
 %% ( http://language.perl.com/misc/Artistic.html ) 
 %% and may be freely used, distributed and modified - subject to the
 %% constraints therein.
+%%
 %% Retain all contribution notices, credits and disclaimers.
 %% 
 %% All comments are the opinions of their respective authors and are not
 %% necessarily endorsed by the IEEE.
 %%**********************************************************************
-%
 %
 % Changelog:
 % 
@@ -61,9 +63,9 @@
 % 1.11 (2003/04/02)
 %  1. Fixed bug with URLs containing underscores when using url.sty. Thanks
 %     to Ming Kin Lai for reporting this.
-
-
-
+% 1.2 (2017-02-05) 
+%  1. Removed sorting from the template. The items should now appear in 
+%      the normal IEEE order, which is in the order they are first cited. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DEFAULTS FOR THE CONTROLS OF THE BST STYLE %%
@@ -159,14 +161,14 @@ FUNCTION {is.print.banners.to.terminal} { #1 }
 %% FILE VERSION AND BANNER %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-FUNCTION{bst.file.version} { "1.11" }
-FUNCTION{bst.file.date} { "2003/04/02" }
+FUNCTION{bst.file.version} { "1.2" }
+FUNCTION{bst.file.date} { "2017-02-05" }
 FUNCTION{bst.file.website} { "http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/" }
 
 FUNCTION {banner.message}
 { is.print.banners.to.terminal
-     { "-- IEEEtranS.bst version" " " * bst.file.version *
-       " (" * bst.file.date * ") " * "by Michael Shell." *
+     { "-- IEEEannotU.bst version" " " * bst.file.version *
+       " (" * bst.file.date * ") " * "by Neil Taylor, based on work by Michael Shell (IEEEtransS.bst) and Titus Barik (IEEEannot)." *
        top$
        "-- " bst.file.website *
        top$
@@ -2457,188 +2459,6 @@ EXECUTE {initialize.controls}
 EXECUTE {initialize.status.constants}
 EXECUTE {banner.message}
 
-
-
-% BEGIN sort code based on that of plain.bst
-
-FUNCTION {sortify}
-{ purify$
-  "l" change.case$
-}
-
-INTEGERS { len }
-
-FUNCTION {chop.word}
-{ 's :=
-  'len :=
-  s #1 len substring$ =
-    { s len #1 + global.max$ substring$ }
-    { s }
-  if$
-}
-
-FUNCTION {sort.format.names}
-{ 's :=
-  #1 'nameptr :=
-  ""
-  s num.names$ 'numnames :=
-  numnames 'namesleft :=
-    { namesleft #0 > }
-    { nameptr #1 >
-        { "   " * }
-        { skip$ }
-      if$
-      s nameptr "{vv{ } }{ll{ }}{  ff{ }}{  jj{ }}" format.name$ 't :=
-      nameptr numnames = t "others" = and
-        { "et al" * }
-        { t sortify * }
-      if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
-    }
-  while$
-}
-
-FUNCTION {sort.format.title}
-{ 't :=
-  "A " #2
-    "An " #3
-      "The " #4 t chop.word
-    chop.word
-  chop.word
-  sortify
-  #1 global.max$ substring$
-}
-
-FUNCTION {author.sort}
-{ author empty$
-    { key empty$
-        { "to sort, need author or key in " cite$ * warning$ "" }
-        { key sortify }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-
-FUNCTION {author.editor.sort}
-{ author empty$
-    { editor empty$
-        { key empty$
-            { "to sort, need author, editor, or key in " cite$ * warning$ "" }
-            { key sortify }
-          if$
-        }
-        { editor sort.format.names }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-
-FUNCTION {author.organization.sort}
-{ author empty$
-    { organization empty$
-        { key empty$
-            { "to sort, need author, organization, or key in " cite$ * warning$ "" }
-            { key sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-
-FUNCTION {editor.organization.sort}
-{ editor empty$
-    { organization empty$
-        { key empty$
-            { "to sort, need editor, organization, or key in " cite$ * warning$ "" }
-            { key sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { editor sort.format.names }
-  if$
-}
-
-FUNCTION {author.organization.institution.sort}
-{ author empty$
-    { organization empty$
-        { institution empty$
-            { key empty$
-                { "to sort, need author, organization, institution or key in " cite$ * warning$ "" }
-                { key sortify }
-              if$
-            }
-            { "The " #4 institution chop.word sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-
-
-FUNCTION {presort}
-{ type$ "ieeetranbstctl" =
-    { key empty$
-        { "_" }
-        { key sortify }
-      if$
-    }
-    { type$ "book" =
-      type$ "inbook" =
-      or 
-        { author.editor.sort }
-        { type$ "proceedings" =
-          type$ "periodical" =
-          or
-            { editor.organization.sort }
-            { type$ "manual" =
-              type$ "electronic" =
-              type$ "misc" =
-              or or
-                { author.organization.sort }
-                { type$ "standard" =
-                   { author.organization.institution.sort }
-                   { author.sort }
-                 if$ 
-                }
-              if$
-            }
-          if$
-        }
-      if$
-      "    "
-      *
-      year empty.field.to.null.string sortify
-      *
-      "    "
-      *
-      title empty.field.to.null.string
-      sort.format.title
-      *
-    }
-  if$
-  #1 entry.max$ substring$
-  'sort.key$ :=
-}
-
-ITERATE {presort}
-
-SORT
-
-% END sort code based on that of plain.bst
-
-
-
 EXECUTE {initialize.longest.label}
 ITERATE {longest.label.pass}
 
@@ -2647,6 +2467,5 @@ ITERATE {call.type$}
 EXECUTE {end.bib}
 
 EXECUTE{completed.message}
-
 
 %% That's all folks, mds.
