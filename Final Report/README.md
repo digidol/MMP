@@ -4,6 +4,8 @@ These document templates are provided as examples that you could use to start yo
 
 You can modify the structure of the document, but it is suggested that unless you have a good reason, the order and titles of the main sections should be kept.
 
+Reasonable effort has been taken to keep the content of the documents synchronised, execpt for minor differences. If in doubt, the LaTeX versions are considrered the source version. That is not intended to indicate any preference for LaTeX. You can use any word processor you like in order to produce your report. However, for the purposes of consistency, it is easier to define the LaTeX format as the main source on which the Word and Open Office files are based. 
+
 ## Word Templates / Open Office Templates
 The Word and Open Office Templates are provided as template files. Double click to open in Word / Open Office. This will create a new unnamed document based on this template. There are some example chapters and sections.
 
