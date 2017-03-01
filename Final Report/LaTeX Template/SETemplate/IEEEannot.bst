@@ -23,6 +23,9 @@
 %% 2. Silvano Balemi and Richard H. Roy's IEEEbib.bst (1993)
 %% 
 %% Added sorting code is from plain.bst.
+%%
+%% Updated Legal Notice to provide updated URL for Perl Artistic License. 
+%% 1st March 2017. Neil Taylor (nst@aber.ac.uk)
 %% 
 %% See:
 %% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
@@ -44,7 +47,7 @@
 %% of any information contained here.
 %%
 %% This code is distributed under the Perl Artistic License 
-%% ( http://language.perl.com/misc/Artistic.html ) 
+%% ( http://dev.perl.org/licenses/artistic.html ) 
 %% and may be freely used, distributed and modified - subject to the
 %% constraints therein.
 %% Retain all contribution notices, credits and disclaimers.

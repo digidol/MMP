@@ -17,6 +17,9 @@
 %% sorting based on plain.bst. Renamed to IEEEannotU (unsorted)
 %% This modified version is available at https://github.com/digidol/MMP/
 %%
+%% Updated Legal Notice to provide updated URL for Perl Artistic License. 
+%% 1st March 2017. Neil Taylor (nst@aber.ac.uk)
+%%
 %% This version of IEEEannot is: 2017-02-05
 %% 
 %% Original starting code base and algorithms obtained from the output of
@@ -46,7 +49,7 @@
 %% of any information contained here.
 %%
 %% This code is distributed under the Perl Artistic License 
-%% ( http://language.perl.com/misc/Artistic.html ) 
+%% ( http://dev.perl.org/licenses/artistic.html ) 
 %% and may be freely used, distributed and modified - subject to the
 %% constraints therein.
 %%
