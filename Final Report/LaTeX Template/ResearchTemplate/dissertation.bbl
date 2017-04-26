@@ -18,6 +18,16 @@
 \fi
 #2}}
 
+\bibitem{FinalReportTechicalWork}
+N.~Taylor, ``{MMP: Final Report and Technical Work},''
+  \url{http://blackboard.aber.ac.uk/}, 2017, accessed April 2017.
+ \begin{quotation}\noindent A document that outlines information about the
+  marking guide for the Final Report and Technical Work. This document was
+  referred to as Structure of the Final Report before academic year 2016-2017.
+  This is published in the Assignments folder. If you are logged in to
+  Blackboard, you can access the folder using
+  \url{http://jump.aber.ac.uk/?sxxpt}. \end{quotation}
+
 \bibitem{apache_poi}
 {Apache Software Foundation}, ``{Apache POI - the Java API for Microsoft
   Documents},'' \url{http://poi.apache.org}, 2014.
