@@ -37,6 +37,8 @@
 
 \begin{document}
 
+%TC:ignore
+
 % all of the include directives below refer to tex files
 % so \include{cover} includes cover.tex - to change the content,
 % edit the tex file
@@ -53,6 +55,7 @@
 \include{declaration}               
 
 \include{acknowledgements} % Acknowledgements
+
 \include{abstract}                 % Abstract
 
 \pagenumbering{roman}
@@ -74,6 +77,8 @@
 
 \setchapterheaderfooter
 
+%TC:endignore
+
 % include the chapters
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
@@ -81,6 +86,8 @@
 \include{Chapter4/chapter4}
 \include{Chapter5/chapter5}
 % add any additional chapters here
+
+%TC:ignore
 
 \setemptyheader
 \addcontentsline{toc}{chapter}{Appendices}
@@ -139,5 +146,7 @@ There is a balance to be struck between what is relevant to include in the body 
 \renewcommand{\bibname}{Annotated Bibliography} 
 
 \bibliography{References/references} % References file
+
+%TC:endignore
 
 \end{document}
